@@ -1,0 +1,159 @@
+/* 🎬 PANTALLA DE INICIO - VERSIÓN CINEMATOGRÁFICA PREMIUM */
+
+#pantalla-inicio {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    padding: 2rem;
+    background: radial-gradient(circle at center, #111 0%, #050505 90%);
+    overflow: hidden;
+}
+
+/* ✨ Partículas flotantes */
+#pantalla-inicio::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 3px 3px;
+    opacity: 0.05;
+    animation: flotar 25s linear infinite;
+}
+@keyframes flotar {
+    from { background-position: 0 0; }
+    to { background-position: 300px 600px; }
+}
+
+/* 🌟 Luces en movimiento */
+#pantalla-inicio::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: conic-gradient(from 180deg at 50% 50%, rgba(255,126,219,0.12), rgba(255,255,255,0.05), rgba(0,0,0,0.1), rgba(255,126,219,0.12));
+    animation: luzCinema 12s linear infinite;
+    opacity: 0.2;
+    pointer-events: none;
+}
+@keyframes luzCinema {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* TÍTULO */
+#pantalla-inicio h1 {
+    font-size: 3rem;
+    font-family: 'Dancing Script', cursive;
+    color: #ff7edb;
+    margin-bottom: 1rem;
+    text-shadow:
+        0 0 8px rgba(255,126,219,0.6),
+        0 0 15px rgba(255,126,219,0.4),
+        0 0 25px rgba(255,126,219,0.25);
+    animation: glowTitle 3s ease-in-out infinite alternate;
+    z-index: 2;
+}
+@keyframes glowTitle {
+    from { text-shadow: 0 0 8px rgba(255,126,219,0.5); }
+    to { text-shadow: 0 0 18px rgba(255,126,219,0.8); }
+}
+
+/* DESCRIPCIÓN */
+#pantalla-inicio p {
+    font-size: 1.15rem;
+    color: #ddd;
+    max-width: 650px;
+    margin-bottom: 2.5rem;
+    text-shadow: 0 0 10px rgba(255,255,255,0.05);
+    z-index: 2;
+}
+
+/* 🎞️ CUADRÍCULA DE TARJETAS */
+.menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    width: 90%;
+    max-width: 1200px;
+    z-index: 2;
+}
+
+/* 📽️ TARJETAS tipo póster */
+.tarjeta {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    height: 300px;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid rgba(255,126,219,0.15);
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 0 25px rgba(255,126,219,0.15);
+    transition: all 0.4s ease;
+}
+
+/* Fondo de póster con filtro */
+.tarjeta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2));
+    transition: opacity 0.3s ease;
+}
+.tarjeta:hover::before {
+    opacity: 0.9;
+}
+
+/* Brillo que cruza la tarjeta */
+.tarjeta::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 220%;
+    height: 200%;
+    background: linear-gradient(120deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 60%);
+    transform: rotate(25deg);
+    transition: all 0.5s ease;
+    pointer-events: none;
+}
+.tarjeta:hover::after {
+    left: -20%;
+}
+
+/* Hover cinematográfico */
+.tarjeta:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(255,126,219,0.5);
+    border-color: #ff7edb;
+}
+
+/* 🎬 TEXTOS sobre el póster */
+.tarjeta span {
+    position: relative;
+    z-index: 2;
+    background: rgba(0,0,0,0.55);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+    text-shadow: 0 0 10px rgba(255,126,219,0.6);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    #pantalla-inicio h1 { font-size: 2.3rem; }
+    #pantalla-inicio p { font-size: 1rem; }
+    .tarjeta { height: 240px; font-size: 1rem; }
+}
+
