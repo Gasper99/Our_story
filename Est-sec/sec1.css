@@ -1,0 +1,31 @@
+#seccion1 .papel {
+    background: #fdf6e3 url('https://www.transparenttextures.com/patterns/aged-paper.png');
+    background-blend-mode: multiply;
+    position: relative;
+    border: 1px solid #d3b48d;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25), 0 0 50px rgba(255, 200, 100, 0.15);
+    animation: aparecerCarta 1.5s ease-in-out;
+}
+
+#seccion1 .papel::before{
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 20% 30%, rgba(80,40,20,0.05) 0%, transparent 60%),
+                    radial-gradient(circle at 80% 70%, rgba(40,20,10,0.05) 0%, transparent 60%);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  border-radius: 6px;
+}
+
+/* Aparición suave */
+@keyframes aparecerCarta {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,26 @@
+.caja-previa {
+    text-align: center;
+    background: #fffdf8;
+    border: 1px solid #d3b48d;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    padding: 3rem;
+    border-radius: 12px;
+    max-width: 900px;
+    width: 90%;
+    animation: aparecerCarta 1.5s ease-in-out;
+}
+
+.caja-previa h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: #523a28;
+    margin-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.caja-previa p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: #3b2f2f;
+    margin-bottom: 2rem;
+}

@@ -1,0 +1,29 @@
+.imagen-izq, .imagen-der {
+  width: 280px;
+  border: 10px solid #fffdf8;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.25);
+  border-radius: 4px;
+  margin: 1.5rem;
+  transform: rotate(-2deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  filter: sepia(15%) contrast(105%) brightness(95%);
+}
+
+.imagen-der { transform: rotate(2deg); }
+
+.imagen-izq:hover, .imagen-der:hover {
+  transform: scale(1.03);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.35);
+}
+
+.bloque {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.bloque p {
+  flex: 1;
+}

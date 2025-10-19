@@ -1,0 +1,35 @@
+.btn-musica{
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 9999;
+    border-radius: 2rem;
+}
+
+.btn-musica:hover{
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.boton-musica {
+    position: fixed;
+    bottom: 15px;
+    right: 30px;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 9999;
+    border-radius: 2rem;
+}
+
+.boton-musica:hover{
+    transform: scale(1.1);
+    opacity: 1;
+}
